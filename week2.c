@@ -16,7 +16,6 @@ int main() {
     msglen = strlen(input);
     keylen = strlen(key);
 
-    // Append zeros to input (msg + keylen - 1)
     for (i = 0; i < keylen - 1; i++)
         input[msglen + i] = '0';
     input[msglen + keylen - 1] = '\0';
@@ -29,7 +28,7 @@ int main() {
                 rem[j] = (temp[j] == key[j]) ? '0' : '1';
         } else {
             for (j = 0; j < keylen; j++)
-                rem[j] = temp[j]; // Same as XOR with 0s
+                rem[j] = temp[j];
         }
 
         for (j = 0; j < keylen - 1; j++)
